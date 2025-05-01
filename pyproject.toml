@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reels-factory"
+version = "0.1.0"
+description = "Automated pipeline for narrated short-form reels."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "typer==0.12.3",
+    "python-dotenv==1.0.1",
+    "praw==7.7.1",
+    "pandas==2.2.2",
+    "tqdm==4.66.4",
+    "ffmpeg-python==0.2.0",
+    "torchaudio>=2.0.0",
+    "torch>=2.0.0",
+    "soundfile==0.12.1",
+    "webvtt-py==0.5.1",
+    "openai-whisper==20231117",
+    "kokoro==0.6.0",
+    "llama-cpp-python==0.3.0",
+    "detoxify==0.5.1",
+    "requests==2.32.3",
+    "Flask==3.0.3",
+    "numpy>=1.26.0",
+]
+
+[project.scripts]
+reels-factory = "reels_factory.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,33 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# Local env and secrets
+.env
+config.json
+config/*.json
+ig_api.json
+ig_token.txt
+
+# Model weights and large assets
+models/
+videos/
+voice/
+video_archive/
+
+# Generated artifacts
+output/
+reels.csv
+*.parquet
+*.vtt
+*.ass
+*.mp4
+
+# Python build / cache
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
