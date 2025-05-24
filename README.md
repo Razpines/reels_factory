@@ -23,6 +23,7 @@ Scrolling users decide in seconds. This project automates the busywork of sourci
 - `docs/` – architecture + publishing notes.
 - `output/` – generated artifacts (audio, captions, reels, logs).
 - `videos/` – local background clips (kept out of git; see `docs/assets.md` for guidance).
+- `models/` – local LLM/Whisper/Kokoro weights (kept out of git; see `docs/llm.md`).
 
 ## Setup
 1. **System deps**
