@@ -4,10 +4,10 @@ This repo is organized as a pipeline that can be run end-to-end or step-by-step 
 
 ```mermaid
 flowchart LR
-    A[Scrape Reddit\npraw + Detoxify] --> B[Rewrite + hashtags\nllama.cpp local LLM]
-    B --> C[TTS + captions\nKokoro + Whisper]
-    C --> D[Render MP4\nFFmpeg crop/subs/mix]
-    D --> E{Publish?\nIG Graph API + ngrok}
+    A["Scrape Reddit<br/>(praw + Detoxify)"] --> B["Rewrite + hashtags<br/>(llama.cpp local LLM)"]
+    B --> C["TTS + captions<br/>(Kokoro + Whisper)"]
+    C --> D["Render MP4<br/>(FFmpeg crop/subs/mix)"]
+    D --> E["Publish?<br/>(IG Graph API + ngrok)"]
 ```
 
 ## Stages and tech

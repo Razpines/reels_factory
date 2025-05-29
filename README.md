@@ -10,10 +10,10 @@ Scrolling users decide in seconds. This project automates the busywork of sourci
 ## Pipeline at a glance
 ```mermaid
 flowchart LR
-    A[Scrape Reddit\n(praw, Detoxify)] --> B[Rewrite\n(llama.cpp local LLM)]
-    B --> C[TTS + Captions\nKokoro TTS, Whisper]
-    C --> D[Render MP4\nFFmpeg crop/subs/mix]
-    D --> E{Publish?\nIG Graph API}
+    A["Scrape Reddit<br/>(praw, Detoxify)"] --> B["Rewrite<br/>(llama.cpp local LLM)"]
+    B --> C["TTS + Captions<br/>Kokoro TTS, Whisper"]
+    C --> D["Render MP4<br/>FFmpeg crop/subs/mix"]
+    D --> E["Publish?<br/>IG Graph API"]
 ```
 
 ## Repo layout
