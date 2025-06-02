@@ -25,7 +25,8 @@ dependencies = [
     "detoxify==0.5.1",
     "requests==2.32.3",
     "Flask==3.0.3",
-    "numpy>=1.26.0",
+    "numpy>=1.26.0,<2.3",
+    "numba>=0.58,<0.61",
 ]
 
 [project.scripts]
