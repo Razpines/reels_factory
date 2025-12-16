@@ -1,0 +1,57 @@
+{
+  "reddit_scraper": {
+    "reddit_api": {
+      "client_id": "your-reddit-client-id",
+      "client_secret": "your-reddit-client-secret",
+      "user_agent": "ai_content_scraper"
+    },
+    "subreddits": [
+      "stories",
+      "cheating_stories",
+      "AmItheAsshole",
+      "confessions",
+      "tifu",
+      "Advice",
+      "relationships",
+      "unpopularopinion"
+    ],
+    "story_normalization": [
+      {"pattern": "\\bAITA\\b", "replacement": "Am I the asshole"},
+      {"pattern": "\\bAITAH\\b", "replacement": "Am I the asshole"},
+      {"pattern": "\\bTIFU\\b", "replacement": "Today I messed up"},
+      {"pattern": "\\bIDK\\b", "replacement": "I don't know"},
+      {"pattern": "u\\/\\w+", "replacement": "someone"},
+      {"pattern": "\\*", "replacement": ""},
+      {"pattern": "\\\\", "replacement": ""},
+      {"pattern": "\"", "replacement": ""}
+    ],
+    "post_filter": "top",
+    "time_filter": "month",
+    "post_limit": 20,
+    "post_length": {
+      "lower": 30,
+      "upper": 300
+    },
+    "sort_by": "score"
+  },
+  "caption_censoring": [
+    {"pattern": "\\bporn", "replacement": "corn"},
+    {"pattern": "\\bkill\\b", "replacement": "unalive"},
+    {"pattern": "fuck", "replacement": "f--k"},
+    {"pattern": "sex", "replacement": "s*x"},
+    {"pattern": "\\borgasm", "replacement": "O"},
+    {"pattern": "\\bhash", "replacement": "#"}
+  ],
+  "video_generation": {
+    "caption_delay": 0.2,
+    "audio_speed": {
+      "male": 1.31,
+      "female": 1.3
+    },
+    "whisper_model_size": "medium"
+  },
+  "assets": {
+    "background_glob": "videos/*.mp4",
+    "output_root": "output"
+  }
+}
