@@ -2,6 +2,8 @@
 
 An end-to-end pipeline for generating 9:16 short-form narrated reels (story voiceover + addictive gameplay background). Scrape Reddit-style stories, rewrite them into a 60-second narration, generate TTS + captions, render vertical MP4s, and optionally publish via the Instagram Graph API.
 
+**Examples:** test reels live at https://www.instagram.com/fr.mngr/
+
 ## Why it exists
 Scrolling users decide in seconds. This project automates the busywork of sourcing, rewriting, voicing, captioning, and rendering so you can iterate on format and storytelling instead of manual editing.
 
@@ -20,6 +22,7 @@ Scrolling users decide in seconds. This project automates the busywork of sourci
 - `config/` – config templates (`config.example.json`).
 - `docs/` – architecture + publishing notes.
 - `output/` – generated artifacts (audio, captions, reels, logs).
+- `videos/` – local background clips (kept out of git; see `docs/assets.md` for guidance).
 
 ## Setup
 1. **System deps**
@@ -39,6 +42,7 @@ Scrolling users decide in seconds. This project automates the busywork of sourci
 4. **Assets**
    - Place gameplay clips under `videos/` (default glob `videos/*.mp4`).
    - Download your LLM/Whisper/Kokoro models to `models/` (or adjust paths).
+   - Background sourcing tips live in `docs/assets.md`; keep large media out of git.
 
 ## Running the pipeline (examples)
 - Scrape only  
