@@ -8,16 +8,19 @@ An end-to-end pipeline for generating 9:16 short-form narrated reels (story voic
 Scrolling users decide in seconds. This project automates the busywork of sourcing, rewriting, voicing, captioning, and rendering so you can iterate on format and storytelling instead of manual editing.
 
 ## Pipeline at a glance
-```
-[scrape] -> [rewrite] -> [voice + captions] -> [render] -> [publish?]
-   ingest       LLM           kokoro/whisper        ffmpeg       IG Graph
+```mermaid
+flowchart LR
+    A[Scrape Reddit\n(praw, Detoxify)] --> B[Rewrite\n(llama.cpp local LLM)]
+    B --> C[TTS + Captions\nKokoro TTS, Whisper]
+    C --> D[Render MP4\nFFmpeg crop/subs/mix]
+    D --> E{Publish?\nIG Graph API}
 ```
 
 ## Repo layout
 - `src/reels_factory/` – all code (CLI, ingest, rewrite, render, publish helpers).
-- `src/reels_factory/ingest.py` – ingest/filter stories.
-- `src/reels_factory/rewrite.py` – rewrite + hashtags.
-- `src/reels_factory/render.py` – TTS, subtitles, ffmpeg render.
+- `src/reels_factory/ingest.py` – ingest/filter stories (praw, Detoxify, optional llama.cpp gender detection).
+- `src/reels_factory/rewrite.py` – rewrite + hashtags (local llama.cpp).
+- `src/reels_factory/render.py` – TTS (Kokoro), subtitles (Whisper), ffmpeg render.
 - `src/reels_factory/instagram_api.py`, `src/reels_factory/flask_oauth.py` – optional IG upload flow.
 - `config/` – config templates (`config.example.json`).
 - `docs/` – architecture + publishing notes.
