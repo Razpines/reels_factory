@@ -7,6 +7,8 @@ The pipeline uses a local Llama-compatible model for rewrite/hook/hashtags and o
 - **File:** `llama-2-7b-chat.Q4_K_M.gguf` (fits on most GPUs, OK on CPU)
 - **Source:** https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF
 
+Reference hardware this was tested on: **NVIDIA RTX 3080 Ti (12 GB VRAM)**. Pick parameter count + quantization that fit your setup; larger models/contexts need more VRAM.
+
 Place the downloaded `.gguf` in `models/` and point to it in config if you change the filename/path.
 
 ## Why small + quantized?
@@ -27,3 +29,6 @@ Or download directly from the Hugging Face page.
 - Default path in code: `models/llama-3.1-8b-instruct-q6_k.gguf` (change if you swap models).
 - If you’re CPU-only, prefer Q4 or Q5 quantization and smaller context (`n_ctx`).
 - Keep the model out of git; `.gitignore` already excludes `models/`.
+
+## Scope / limitations
+- This repo currently targets **local GGUF inference only**. It does **not** integrate hosted providers (OpenRouter, OpenAI/Anthropic, etc.). Add your own client if you need managed inference.
