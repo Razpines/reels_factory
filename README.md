@@ -81,6 +81,9 @@ flowchart LR
 - Logs: `output/logs/pipeline.log`
 - Reel IDs are deterministic hashes of the title via `reels_factory.utils.reel_id_from_title`.
 
+**Demo artifact**  
+A sample reel (video + narration + captions + rewritten post) is published as a GitHub Release asset to avoid bloating the repo. Download it from the Releases page and drop files into `output/reels/` and `output/narration/` if you want a quick preview without running the pipeline.
+
 ## Safety & content filtering
 - Toxicity scores (Detoxify) are captured during scrape; thresholding is configurable.
 - Normalization/censoring patterns prevent obvious policy violations in captions.
